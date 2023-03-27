@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "salesforce.salesforcedx-vscode",
+    "redhat.vscode-xml",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "github.vscode-pull-request-github",
+    "financialforce.lana",
+    "mikestead.dotenv"
+  ]
+}

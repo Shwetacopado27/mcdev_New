@@ -1,88 +1,93 @@
 {
-    "name": "mcdev-copado",
-    "private": true,
-    "version": "1.3.0",
-    "description": "Salesforce code & Copado functions that bring Accenture SFMC DevTools functionality to 'Copado Deployer' v20",
-    "author": "Accenture: joern.berkefeld, daniel.ventura, uwe.voellger, Copado: nahuel.rabe, david.venegas",
-    "license": "MIT",
-    "directories": {
-        "bin": "copado-function/dist"
-    },
-    "peerDependencies": {
-        "mcdev": ">=4.1.12"
-    },
-    "copadoDependencies": {
-        "Copado Deployer": "20.1"
-    },
-    "engines": {
-        "node": ">=14.16"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/Accenture/sfmc-devtools-copado.git"
-    },
-    "homepage": "https://github.com/Accenture/sfmc-devtools-copado#readme",
-    "bugs": {
-        "url": "https://github.com/Accenture/sfmc-devtools-copado/issues",
-        "email": "joern.berkefeld@accenture.com"
-    },
-    "funding": {
-        "type": "corporate",
-        "url": "https://github.com/Accenture/sfmc-devtools-copado"
-    },
-    "scripts": {
-        "lint": "eslint **/{aura,lwc}/**",
-        "test": "npm run test:unit",
-        "test:unit": "sfdx-lwc-jest",
-        "test:unit:watch": "sfdx-lwc-jest --watch",
-        "test:unit:debug": "sfdx-lwc-jest --debug",
-        "test:unit:coverage": "sfdx-lwc-jest --coverage",
-        "prettier": "prettier --write \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\"",
-        "prettier:verify": "prettier --list-different \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\"",
-        "postinstall": "husky install",
-        "precommit": "lint-staged",
-        "lint-cf": "eslint copado-function/app/**/*.js",
-        "docs": "jsdoc2md --files copado-function/app/*.fn.js copado-function/app/common/**/*.js copado-function/app/types/**/*.js > copado-function/docs/documentation.md",
-        "build": "node ./copado-function/app/esbuild.js",
-        "build:watch": "node ./copado-function/app/esbuild.js --watch",
-        "build:docs": "run-p build docs",
-        "version:major": "node ./copado-function/app/npmVersion.js major",
-        "version:minor": "node ./copado-function/app/npmVersion.js minor",
-        "version:patch": "node ./copado-function/app/npmVersion.js patch"
-    },
-    "devDependencies": {
-        "@lwc/eslint-plugin-lwc": "^1.5.0",
-        "@prettier/plugin-xml": "^2.2.0",
-        "@salesforce/eslint-config-lwc": "^3.3.3",
-        "@salesforce/eslint-plugin-aura": "^2.1.0",
-        "@salesforce/eslint-plugin-lightning": "^1.0.0",
-        "@salesforce/sfdx-lwc-jest": "^1.1.3",
-        "esbuild": "0.15.13",
-        "esbuild-plugin-version-injector": "1.0.2",
-        "eslint": "8.29.0",
-        "eslint-config-prettier": "8.5.0",
-        "eslint-config-ssjs": "1.1.11",
-        "eslint-plugin-jsdoc": "39.6.4",
-        "eslint-plugin-mocha": "10.1.0",
-        "eslint-plugin-prettier": "4.2.1",
-        "eslint-plugin-unicorn": "44.0.2",
-        "husky": "^8.0.1",
-        "jsdoc-to-markdown": "7.1.1",
-        "lint-staged": "^13.1.0",
-        "npm-run-all": "4.1.5",
-        "prettier": "2.8.0",
-        "prettier-eslint": "15.0.1",
-        "prettier-plugin-apex": "^1.11.0"
-    },
-    "lint-staged": {
-        "force-app/**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}": [
-            "prettier --write"
-        ],
-        "copado-function/**/*.{js,json,md}": [
-            "eslint --fix"
-        ],
-        "**/{aura,lwc}/**": [
-            "eslint"
-        ]
-    }
+  "name": "mcdev-copado",
+  "private": true,
+  "version": "1.3.0",
+  "description": "Salesforce code & Copado functions that bring Accenture SFMC DevTools functionality to 'Copado Deployer' v20",
+  "author": "Accenture: joern.berkefeld, daniel.ventura, uwe.voellger, Copado: nahuel.rabe, david.venegas",
+  "license": "MIT",
+  "directories": {
+    "bin": "copado-function/dist"
+  },
+  "peerDependencies": {
+    "mcdev": "4.3.4"
+  },
+  "copadoDependencies": {
+    "Copado Deployer": "20.1"
+  },
+  "engines": {
+    "node": ">=14.16"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Accenture/sfmc-devtools-copado.git"
+  },
+  "homepage": "https://github.com/Accenture/sfmc-devtools-copado#readme",
+  "bugs": {
+    "url": "https://github.com/Accenture/sfmc-devtools-copado/issues",
+    "email": "joern.berkefeld@accenture.com"
+  },
+  "funding": {
+    "type": "corporate",
+    "url": "https://github.com/Accenture/sfmc-devtools-copado"
+  },
+  "scripts": {
+    "lint": "eslint **/{aura,lwc}/**",
+    "test": "npm run test:unit",
+    "test:unit": "sfdx-lwc-jest",
+    "test:unit:watch": "sfdx-lwc-jest --watch",
+    "test:unit:debug": "sfdx-lwc-jest --debug",
+    "test:unit:coverage": "sfdx-lwc-jest --coverage",
+    "prettier": "prettier --write \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\"",
+    "prettier:verify": "prettier --list-different \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\"",
+    "postinstall": "husky install",
+    "precommit": "lint-staged",
+    "lint-cf": "eslint copado-function/app/**/*.js",
+    "docs": "jsdoc2md --files copado-function/app/*.fn.js copado-function/app/common/**/*.js copado-function/app/types/**/*.js > copado-function/docs/documentation.md",
+    "build": "sfmc-build all",
+    "build:watch": "node ./copado-function/app/esbuild.js --watch",
+    "build:docs": "run-p build docs",
+    "version:major": "node ./copado-function/app/npmVersion.js major",
+    "version:minor": "node ./copado-function/app/npmVersion.js minor",
+    "version:patch": "node ./copado-function/app/npmVersion.js patch",
+    "build-cp": "sfmc-build cloudPages",
+    "build-email": "sfmc-build emails",
+    "eslint-check": "eslint"
+  },
+  "devDependencies": {
+    "@lwc/eslint-plugin-lwc": "^1.5.0",
+    "@prettier/plugin-xml": "^2.2.0",
+    "@salesforce/eslint-config-lwc": "^3.3.3",
+    "@salesforce/eslint-plugin-aura": "^2.1.0",
+    "@salesforce/eslint-plugin-lightning": "^1.0.0",
+    "@salesforce/sfdx-lwc-jest": "^1.1.3",
+    "esbuild": "0.15.13",
+    "esbuild-plugin-version-injector": "1.0.2",
+    "eslint": "8.32.0",
+    "eslint-config-prettier": "8.6.0",
+    "eslint-config-ssjs": "1.1.11",
+    "eslint-plugin-jsdoc": "39.6.4",
+    "eslint-plugin-mocha": "10.1.0",
+    "eslint-plugin-prettier": "4.2.1",
+    "eslint-plugin-unicorn": "44.0.2",
+    "husky": "^8.0.1",
+    "jsdoc-to-markdown": "7.1.1",
+    "lint-staged": "^13.1.0",
+    "npm-run-all": "4.1.5",
+    "prettier": "2.8.3",
+    "prettier-eslint": "15.0.1",
+    "prettier-plugin-apex": "^1.11.0",
+    "prettier-plugin-sql": "0.12.1",
+    "sfmc-boilerplate": "1.2.6"
+  },
+  "lint-staged": {
+    "force-app/**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}": [
+      "prettier --write"
+    ],
+    "copado-function/**/*.{js,json,md}": [
+      "eslint --fix"
+    ],
+    "**/{aura,lwc}/**": [
+      "eslint"
+    ]
+  }
 }

@@ -1,26 +1,23 @@
 {
+    "useTabs": false,
     "tabWidth": 4,
     "printWidth": 100,
+    "singleQuote": true,
     "trailingComma": "none",
     "overrides": [
         {
-            "files": "**/lwc/**/*.html",
-            "options": { "parser": "lwc" }
-        },
-        {
-            "files": "*.{cmp,page,component}",
-            "options": { "parser": "html" }
-        },
-        {
-            "files": "*.json",
+            "files": "*.ssjs",
             "options": {
-                "parser": "json"
+                "parser": "babel",
+                "trailingComma": "none"
             }
         },
         {
-            "files": "*.md",
+            "files": "*.sql",
             "options": {
-                "tabWidth": 2
+                "formatter": "sql-formatter",
+                "language": "tsql",
+                "uppercase": true
             }
         }
     ]
